@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>The Agentic Commerce Inflection — What Every Ecommerce Leader Needs to Know</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light only;--navy:#0f2035;--navy2:#1a2e44;--green:#8ecb3a;--gl:#eef7dc;--ink:#111111;--body:#1a1a1a;--muted:#555;--rule:#e0e0e0;--bg:#f8f9fa;--red:#b82000;--amber:#d4880a;--blue:#1a6ea8}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{background:#fff!important;color:#111!important}
+body{font-family:'Syne',sans-serif;background:#fff!important;color:#111!important;font-size:17px;line-height:1.75;-webkit-text-size-adjust:100%}
+.cover{background-color:var(--navy);padding:56px 28px 48px}
+.cover-badge{display:inline-block;background:var(--green);color:var(--navy)!important;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;margin-bottom:24px;font-weight:700}
+.cover-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--green)!important;margin-bottom:20px}
+.cover h1{font-family:'DM Serif Display',serif;font-size:clamp(30px,7vw,56px);line-height:1.1;color:#fff!important;margin-bottom:18px}
+.cover h1 em{font-style:italic;color:var(--green)!important}
+.cover-sub{font-size:15px;color:#b8ccdc!important;line-height:1.65;margin-bottom:32px}
+.cover-meta{display:flex;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,.15);padding-top:22px}
+.cover-meta-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#7a9aaa!important;margin-bottom:3px}
+.cover-meta-value{font-size:13px;color:#ddeeff!important;font-weight:600}
+.toc{background-color:var(--navy2);padding:36px 28px}
+.toc-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--green)!important;margin-bottom:18px}
+.toc-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
+.toc-list li{font-size:13px;color:#c0d8e8!important;display:flex;gap:8px;line-height:1.4}
+.toc-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--green)!important;flex-shrink:0;padding-top:1px}
+.report-body{background:#fff;max-width:820px;margin:0 auto;padding:0 24px 80px}
+.section{padding:52px 0 40px;border-bottom:1px solid var(--rule)}
+.section:last-child{border-bottom:none}
+.sec-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:28px}
+.sec-num{font-family:'DM Mono',monospace;font-size:11px;background:var(--navy);color:#fff!important;padding:5px 9px;margin-top:5px;flex-shrink:0;letter-spacing:.08em;line-height:1}
+.section h2{font-family:'DM Serif Display',serif;font-size:clamp(22px,4vw,32px);line-height:1.15;color:var(--navy)!important}
+.section h3{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy)!important;margin:36px 0 14px;display:flex;align-items:center;gap:10px}
+.section h3::after{content:'';flex:1;height:1px;background:var(--rule)}
+.section p,.report-body p{color:#1a1a1a!important;margin-bottom:18px}
+.lead{font-family:'DM Serif Display',serif;font-size:19px;font-style:italic;line-height:1.5;color:#111!important;margin-bottom:24px;padding-left:16px;border-left:3px solid var(--green)}
+em{font-style:italic}strong{font-weight:700}
+.callout{background:var(--navy);border-left:4px solid var(--green);padding:22px 24px;margin:28px 0}
+.callout-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--green)!important;margin-bottom:10px}
+.callout p{color:#d8ecf8!important;font-size:15px;margin-bottom:0!important;line-height:1.65}
+.callout-stat{font-family:'DM Serif Display',serif;font-size:52px;color:var(--green)!important;line-height:1;margin-bottom:8px}
+.hband{background:var(--navy);border-left:4px solid var(--green);padding:22px 24px;margin:28px 0}
+.hband p{color:#d8ecf8!important;font-size:15px;margin-bottom:0!important;line-height:1.65}
+.hband strong{color:#b8f060!important;font-weight:700}
+.expert-voice{background:#f5f8fa;border-left:3px solid #d0d8e0;padding:20px 20px 20px 22px;margin:24px 0}
+.voice-text{font-family:'DM Serif Display',serif;font-size:18px;font-style:italic;line-height:1.5;color:#111!important;margin-bottom:10px}
+.voice-attr{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;color:#667788!important}
+.theory-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.theory-card{border:1px solid var(--rule);background:#f8f8f8;padding:18px}
+.theory-card.bull{border-top:4px solid #1a7a40}
+.theory-card.bear{border-top:4px solid var(--red)}
+.theory-card.neutral{border-top:4px solid #888}
+.theory-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#666!important;margin-bottom:8px}
+.theory-card h4{font-family:'DM Serif Display',serif;font-size:16px;color:#111!important;margin-bottom:8px}
+.theory-card p{font-size:13.5px!important;color:#444!important;line-height:1.6;margin-bottom:0!important}
+.num-list{list-style:none;margin:20px 0}
+.num-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px}
+.num-badge{font-family:'DM Mono',monospace;font-size:11px;background:var(--navy);color:#fff!important;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.num-content{flex:1}
+.num-title{display:block;font-size:15px;font-weight:700;color:#111!important;margin-bottom:4px}
+.num-body{font-size:14px;color:#333!important;line-height:1.65}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px}
+.data-table th{background:var(--navy);color:#fff!important;padding:10px 12px;text-align:left;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:400}
+.data-table td{padding:11px 12px;border-bottom:1px solid #e8e8e8;vertical-align:top;color:#1a1a1a!important;line-height:1.5}
+.data-table tr:nth-child(even) td{background:#f7f7f7}
+.data-table tr:last-child td{border-bottom:none}
+.data-table td strong{color:#111!important}
+.badge{display:inline-block;padding:2px 8px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;border-radius:2px}
+.badge-red{background:#fde8e3;color:#8a1500!important}
+.badge-amber{background:#fef3d8;color:#6b4500!important}
+.badge-green{background:#e6f5ec;color:#0f4d25!important}
+/* ILLUSTRATIONS */
+.illus-wrap{margin:32px 0;border:1px solid var(--rule);overflow:hidden;background:var(--bg)}
+.illus-title{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)!important;text-align:center;padding:14px 16px 0;background:#fff}
+.illus-caption{font-family:'DM Mono',monospace;font-size:11px;color:#667788!important;text-align:center;padding:10px 16px 14px;border-top:1px solid var(--rule);background:#fff;letter-spacing:.03em;line-height:1.5}
+.evo-tl{display:flex;align-items:stretch;padding:28px 16px 20px;gap:0;overflow-x:auto;background:var(--navy)}
+.evo-step{display:flex;flex-direction:column;align-items:center;flex:1;min-width:80px;position:relative;padding:0 4px}
+.evo-step:not(:last-child)::after{content:'→';position:absolute;right:-12px;top:24px;color:var(--green);font-size:16px;font-weight:700;z-index:2}
+.evo-icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:8px;flex-shrink:0}
+.evo-icon.old{background:rgba(255,255,255,.1)}
+.evo-icon.mid{background:rgba(142,203,58,.15)}
+.evo-icon.now{background:var(--green)}
+.evo-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#8aaabb!important;text-align:center;line-height:1.3}
+.evo-label.active{color:var(--green)!important;font-weight:700}
+.evo-year{font-size:9px;color:#5a7a8a!important;margin-top:3px;font-family:'DM Mono',monospace;text-align:center}
+.split-world{display:grid;grid-template-columns:1fr 1fr}
+.world-half{padding:20px;display:flex;flex-direction:column;gap:8px}
+.world-half.old-w{background:#f0f4f8}
+.world-half.new-w{background:var(--navy)}
+.world-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;font-weight:700}
+.world-label.old-l{color:#778899!important}
+.world-label.new-l{color:var(--green)!important}
+.jstep{display:flex;align-items:center;gap:8px;padding:7px 10px;font-size:12px;font-family:'DM Mono',monospace;border-radius:2px}
+.jstep.os{background:#e8eef4;color:#334455!important}
+.jstep.ns{background:rgba(255,255,255,.07);color:#c0d8e8!important}
+.jstep .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.jstep.os .dot{background:#99aabb}
+.jstep.ns .dot{background:var(--green)}
+.world-note{font-size:11px;font-family:'DM Mono',monospace;margin-top:4px}
+.world-note.on{color:#667788!important}
+.world-note.nn{color:var(--green)!important}
+.spec-wrap{padding:24px 20px 16px}
+.spec-bar{height:44px;border-radius:3px;background:linear-gradient(to right,#d4380d,#fa8c16,#52c41a,#1677ff);margin-bottom:16px;display:flex}
+.sz{flex:1;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.spec-labels{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px}
+.sl{padding:8px 6px;text-align:center}
+.sl.hl{background:var(--gl);border:2px solid var(--green);border-radius:3px}
+.sl-zone{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)!important;margin-bottom:2px}
+.sl-name{font-size:12px;font-weight:700;color:var(--ink)!important;line-height:1.3;margin-bottom:2px}
+.sl-eg{font-size:10px;color:var(--muted)!important;line-height:1.3}
+.spec-legend{display:flex;justify-content:space-between;margin-top:10px}
+.dc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px}
+.dc-panel{padding:14px;border-radius:3px}
+.dc-panel.bad{background:#fff8f7;border:1px solid #ffccc7}
+.dc-panel.good{background:#f6ffed;border:1px solid #b7eb8f}
+.dc-head{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.dc-panel.bad .dc-head{color:var(--red)!important}
+.dc-panel.good .dc-head{color:#2a6b10!important}
+.dc-field{display:flex;gap:6px;margin-bottom:3px;padding:3px 6px;border-radius:2px;font-size:12px;line-height:1.5}
+.dc-field.miss{background:#fff0ee;color:#aa3322!important}
+.dc-field.pres{background:#f0fbea;color:#1a5c08!important}
+.dc-key{font-weight:700;flex-shrink:0;font-family:'DM Mono',monospace;font-size:11px}
+.dc-score{margin-top:8px;font-family:'DM Mono',monospace;font-size:11px;font-weight:700;text-align:center;padding:5px;border-radius:2px}
+.dc-panel.bad .dc-score{background:#fde8e3;color:#8a1500!important}
+.dc-panel.good .dc-score{background:#e6f5ec;color:#0f4d25!important}
+.fw-wrap{padding:20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
+.fw-step{display:flex;flex-direction:column;align-items:center;width:80px;text-align:center}
+.fw-icon{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff!important;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:5px;border:2px solid var(--green)}
+.fw-label{font-size:11px;color:var(--ink)!important;line-height:1.3;font-weight:600}
+.fw-arr{font-size:18px;color:var(--green)!important;align-self:center;margin-bottom:16px}
+.fw-warn{width:100%;text-align:center;font-size:12px;color:var(--red)!important;font-family:'DM Mono',monospace;margin-top:8px;padding:0 20px}
+.casc{padding:16px 18px;display:flex;flex-direction:column;gap:0}
+.ct-phase{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--rule)}
+.ct-phase:last-child{border-bottom:none}
+.ct-left{text-align:right}
+.ct-period{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)!important}
+.ct-pname{font-family:'DM Serif Display',serif;font-size:15px;line-height:1.2;margin-top:2px}
+.ct-pname.p1{color:var(--blue)!important}
+.ct-pname.p2{color:var(--amber)!important}
+.ct-pname.p3{color:var(--red)!important}
+.ct-sev{font-size:10px;font-family:'DM Mono',monospace;margin-top:4px}
+.ct-sev.s1{color:var(--blue)!important}
+.ct-sev.s2{color:var(--amber)!important}
+.ct-sev.s3{color:var(--red)!important}
+.ct-bar{height:6px;border-radius:3px;margin:6px 0}
+.ct-bar.b1{background:var(--blue);width:40%}
+.ct-bar.b2{background:var(--amber);width:70%}
+.ct-bar.b3{background:var(--red);width:100%}
+.ct-what{font-size:13px;color:var(--body)!important;line-height:1.6;margin-bottom:8px}
+.ct-chips{display:flex;gap:5px;flex-wrap:wrap}
+.ct-chip{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:10px}
+.ct-chip.c1{background:#e8f2fb;color:#1a5580!important}
+.ct-chip.c2{background:#fef3d8;color:#6b4500!important}
+.ct-chip.c3{background:#fde8e3;color:#8a1500!important}
+.fc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px}
+.fc-box{}
+.fc-head{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-bottom:10px}
+.fc-head.old{color:#778899!important}
+.fc-head.new{color:var(--green)!important}
+.fs{text-align:center;padding:8px 6px;margin-bottom:3px;font-size:12px;font-weight:600;color:#fff!important}
+.fs1{background:#2a4a6a;clip-path:polygon(5% 0,95% 0,90% 100%,10% 100%)}
+.fs2{background:#1a6ea8;clip-path:polygon(9% 0,91% 0,86% 100%,14% 100%)}
+.fs3{background:#0f8a5a;clip-path:polygon(13% 0,87% 0,82% 100%,18% 100%)}
+.fs4{background:#2a8a2a;clip-path:polygon(17% 0,83% 0,78% 100%,22% 100%)}
+.nfs{padding:7px 12px;margin-bottom:4px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;border-radius:2px}
+.nfs1{background:var(--navy);color:#fff!important}
+.nfs2{background:#1a4a6a;color:#fff!important}
+.nfs3{background:var(--green);color:var(--navy)!important}
+.fc-note{margin-top:8px;font-family:'DM Mono',monospace;font-size:10px;text-align:center}
+.fc-note.on{color:#667788!important}
+.fc-note.nn{color:var(--red)!important}
+.stack-d{padding:16px;display:flex;flex-direction:column;gap:8px}
+.s-layer{border-radius:3px;padding:12px 14px;display:flex;align-items:flex-start;gap:10px}
+.s-consumer{background:#e8f4ff;border:1px solid #9ac8f0}
+.s-protocol{background:var(--navy);border:1px solid var(--navy2)}
+.s-retailer{background:var(--gl);border:1px solid #c5e89a}
+.s-icon{font-size:20px;flex-shrink:0;width:32px;text-align:center;margin-top:2px}
+.s-name{font-weight:700;font-size:13px;color:var(--ink)!important;margin-bottom:3px}
+.s-protocol .s-name{color:#fff!important}
+.s-desc{font-size:12px;color:var(--muted)!important;line-height:1.4}
+.s-protocol .s-desc{color:#8aaabb!important}
+.s-arr{text-align:center;font-size:16px;color:var(--green)!important;font-weight:700;margin:-4px 0}
+.s-footer{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:12px 16px;background:var(--navy)}
+.sf-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)!important;margin-bottom:3px}
+.sf-desc{font-size:11px;color:#b0c8d8!important;line-height:1.4}
+.sc-wrap{padding:16px 18px}
+.sc-head-row{display:grid;grid-template-columns:180px 1fr 100px;gap:10px;padding-bottom:8px;border-bottom:2px solid var(--navy)}
+.sc-head-row span{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)!important}
+.sc-row{display:grid;grid-template-columns:180px 1fr 100px;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule)}
+.sc-row:last-child{border-bottom:none}
+.sc-item{font-size:13px;font-weight:600;color:var(--ink)!important}
+.sc-bw{background:#eee;border-radius:3px;height:10px;overflow:hidden}
+.sc-b{height:100%;border-radius:3px}
+.sc-b.urgent{background:var(--red)}
+.sc-b.high{background:var(--amber)}
+.sc-b.medium{background:#52c41a}
+.sc-pct{font-family:'DM Mono',monospace;font-size:11px;font-weight:700;text-align:right}
+.sc-pct.urgent{color:var(--red)!important}
+.sc-pct.high{color:var(--amber)!important}
+.sc-pct.medium{color:#2a6b10!important}
+/* SOURCES */
+.sources-section{background:#f8f9fa;border-top:3px solid var(--navy);padding:48px 24px;margin:0 -24px}
+.sources-title{font-family:'DM Serif Display',serif;font-size:24px;color:var(--navy)!important;margin-bottom:8px}
+.sources-sub{font-size:14px;color:var(--muted)!important;margin-bottom:32px}
+.source-group{margin-bottom:28px}
+.source-group-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--green)!important;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+.source-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid #eeeeee}
+.source-item:last-child{border-bottom:none}
+.source-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)!important;width:20px;flex-shrink:0;padding-top:2px}
+.source-text{font-size:13px;color:var(--body)!important;line-height:1.5}
+.source-text a{color:var(--blue)!important;text-decoration:none}
+.source-text a:hover{text-decoration:underline}
+.source-text em{font-style:italic;color:var(--muted)!important}
+.footer{background:#080f18;padding:28px 24px;font-family:'DM Mono',monospace}
+.footer-top{font-size:11px;color:#667788!important;letter-spacing:.04em;margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.footer .green{color:var(--green)!important}
+.footer-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#445566!important;margin-bottom:8px}
+.footer-sources{display:flex;flex-wrap:wrap;gap:6px}
+.footer-pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#8aaabb!important;font-size:10px;padding:3px 10px;border-radius:10px;letter-spacing:.04em;white-space:nowrap}
+@media(max-width:540px){
+  .toc-list{grid-template-columns:1fr}
+  .theory-grid{grid-template-columns:1fr}
+  .data-table{font-size:12px}
+  .data-table th,.data-table td{padding:7px 8px}
+  .cover{padding:40px 20px 36px}
+  .toc{padding:32px 20px}
+  .report-body{padding:0 20px 60px}
+  .split-world{grid-template-columns:1fr}
+  .dc-grid{grid-template-columns:1fr}
+  .fc-grid{grid-template-columns:1fr}
+  .ct-phase{grid-template-columns:1fr}
+  .ct-left{text-align:left}
+  .sc-head-row,.sc-row{grid-template-columns:140px 1fr 70px}
+  .spec-labels{grid-template-columns:1fr 1fr}
+  .sources-section{padding:36px 20px;margin:0 -20px}
+}
+</style>
+</head>
+<body>
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Strategic Intelligence Report · April 2026</div>
+  <h1>The <em>Agentic Commerce</em> Inflection</h1>
+  <p class="cover-sub">A rigorously researched, visually guided analysis of what happens when AI becomes the primary interface for product discovery, recommendation, and purchase — and what every ecommerce retailer needs to understand and act on. All statistics are verified against primary sources and cited throughout.</p>
+  <div class="cover-meta">
+    <div><div class="cover-meta-label">Audience</div><div class="cover-meta-value">Ecommerce Leaders, Retailers & Brands</div></div>
+    <div><div class="cover-meta-label">Sources</div><div class="cover-meta-value">Morgan Stanley, Bain, BCG, McKinsey, Adobe Analytics, Commerce/Future Commerce</div></div>
+    <div><div class="cover-meta-label">Last Updated</div><div class="cover-meta-value">April 2026</div></div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-label">Contents</div>
+  <ul class="toc-list">
+    <li><span class="toc-num">01</span>The Central Thesis &amp; Where It Holds</li>
+    <li><span class="toc-num">06</span>The Martech Reckoning</li>
+    <li><span class="toc-num">02</span>The Competing Theories</li>
+    <li><span class="toc-num">07</span>The Infrastructure Layer</li>
+    <li><span class="toc-num">03</span>The Purchase Consideration Spectrum</li>
+    <li><span class="toc-num">08</span>The Vendor Landscape</li>
+    <li><span class="toc-num">04</span>Structured Data as the New Shelf Space</li>
+    <li><span class="toc-num">09</span>What Multi-Brand Retailers Must Do</li>
+    <li><span class="toc-num">05</span>The Disintermediation Cascade</li>
+    <li><span class="toc-num">10</span>Strategic Synthesis &amp; Action Plan</li>
+  </ul>
+</div>
+
+<div class="report-body">
+
+<!-- S1 -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">01</div><h2>The Central Thesis &amp; Where It Holds</h2></div>
+
+  <p class="lead">A structural argument is circulating among ecommerce leaders: that the website, as the primary shopping venue, is a transitional technology — and that AI will eventually become the primary interface through which most commerce flows.</p>
+
+  <div class="illus-wrap">
+    <div class="illus-title">How Commerce Discovery Has Evolved — And Where It's Going Next</div>
+    <div class="evo-tl">
+      <div class="evo-step"><div class="evo-icon old">🏪</div><div class="evo-label">Physical Store</div><div class="evo-year">Pre-1990s</div></div>
+      <div class="evo-step"><div class="evo-icon old">📖</div><div class="evo-label">Mail Order Catalog</div><div class="evo-year">1990s</div></div>
+      <div class="evo-step"><div class="evo-icon mid">🔍</div><div class="evo-label">Google Search</div><div class="evo-year">Early 2000s</div></div>
+      <div class="evo-step"><div class="evo-icon mid">🛒</div><div class="evo-label">Ecommerce Sites</div><div class="evo-year">2010s</div></div>
+      <div class="evo-step"><div class="evo-icon mid">📱</div><div class="evo-label">Social &amp; Mobile</div><div class="evo-year">2015–2022</div></div>
+      <div class="evo-step"><div class="evo-icon now">🤖</div><div class="evo-label active">AI Agent Commerce</div><div class="evo-year" style="color:var(--green)!important">NOW →</div></div>
+    </div>
+    <div class="illus-caption">Each era shifted where the majority of purchasing decisions were made — without fully eliminating what came before. The LLM era is the next shift, and it's moving faster than any prior transition.</div>
+  </div>
+
+  <div class="illus-wrap">
+    <div class="illus-title">The Shopping Journey: How It Used to Work vs. How It's Changing</div>
+    <div class="split-world">
+      <div class="world-half old-w">
+        <div class="world-label old-l">The Classic Journey (Human-Driven)</div>
+        <div class="jstep os"><span class="dot"></span>Customer has a need</div>
+        <div class="jstep os"><span class="dot"></span>Opens Google, types query</div>
+        <div class="jstep os"><span class="dot"></span>Visits 3–5 retailer websites</div>
+        <div class="jstep os"><span class="dot"></span>Reads reviews, compares prices</div>
+        <div class="jstep os"><span class="dot"></span>Adds to cart on retailer site</div>
+        <div class="jstep os"><span class="dot"></span>Checks out — retailer captures all data</div>
+        <div class="world-note on">⏱ 20–45 min · You see every click · You own the data</div>
+      </div>
+      <div class="world-half new-w">
+        <div class="world-label new-l">The New Journey (Agent-Driven)</div>
+        <div class="jstep ns"><span class="dot"></span>"Order me a new bike pump" → agent</div>
+        <div class="jstep ns"><span class="dot"></span>Agent queries product databases</div>
+        <div class="jstep ns"><span class="dot"></span>Agent compares specs and reviews</div>
+        <div class="jstep ns"><span class="dot"></span>Agent selects best match</div>
+        <div class="jstep ns"><span class="dot"></span>Human approves — agent checks out</div>
+        <div class="world-note nn">⚡ 30 sec · You may only see the order · You own nothing else</div>
+      </div>
+    </div>
+    <div class="illus-caption">In the new journey, your website may be bypassed entirely. You become visible only if your product data is machine-readable and your catalog is trusted by the agent.</div>
+  </div>
+
+  <p>The signal is real and accelerating. According to a <a href="https://investors.bigcommerce.com/news-releases/news-release-details/1-3-gen-z-and-1-4-millennials-now-turn-ai-platforms-over-other/" target="_blank" style="color:var(--blue)!important">June 2025 survey of 1,000 consumers across the U.S., U.K., and Australia by Commerce and Future Commerce</a>, <strong>33% of Gen Z shoppers now prefer AI platforms for product research</strong> — putting them nearly at parity with the 37% who still start with a traditional search engine. Among Millennials, 26% prefer AI for product research. <a href="https://news.adobe.com/news/2026/01/adobe-holiday-shopping-season" target="_blank" style="color:var(--blue)!important">Adobe Analytics data</a>, covering over one trillion visits to U.S. retail sites, found that <strong>AI-driven traffic to retail sites surged 693% year-over-year</strong> during the 2025 holiday season (November–December), with AI referrals converting 31% better than non-AI traffic sources — a meaningful quality signal, not just a volume one.</p>
+
+  <p>For broader context on scale: consumers still conduct far more searches on Google than on AI platforms — adoption is accelerating, but not yet dominant. The trajectory, not the current volume, is the critical variable. History suggests the window to prepare is always shorter than it appears.</p>
+
+  <div class="callout">
+    <div class="callout-label">Market Size Projections — Verified Primary Sources</div>
+    <div class="callout-stat">$300B–$500B</div>
+    <p><a href="https://www.bain.com/insights/agentic-ai-commerce-the-next-retail-revolution-is-here/" target="_blank" style="color:#8ecb3a!important"><strong>Bain &amp; Company</strong></a> (November 2025) estimates U.S. agentic commerce could reach $300–$500 billion by 2030, representing 15–25% of total U.S. online retail sales. <a href="https://www.morganstanley.com/insights/articles/agentic-commerce-market-impact-outlook" target="_blank" style="color:#8ecb3a!important"><strong>Morgan Stanley</strong></a> (November 2025) projects $190–$385 billion in U.S. ecommerce spending by 2030 (10–20% market share). <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants" target="_blank" style="color:#8ecb3a!important"><strong>McKinsey</strong></a> (October 2025) projects $1 trillion in U.S. B2C and $3–$5 trillion globally. All three firms are projecting the same structural shift with different scope definitions.</p>
+  </div>
+
+  <p>The core of the thesis: brands will still need websites for story, inspiration, and legitimacy. But the transaction layer is migrating. Checkout friction is moving upstream into conversational interfaces. Discovery is shifting into LLM dialogue, not product listing pages. The question of "who shows up" will increasingly be answered not by a search algorithm but by a language model reasoning over structured product data.</p>
+
+  <p>Where this thesis is most grounded: commodity purchasing, replenishment cycles, categories with standardized technical specifications, and B2B procurement. Where it is more contested: high-consideration, emotionally charged, or fit-dependent purchases. That spectrum matters enormously for how any given retailer should respond — and we map it in detail in Section 03.</p>
+</div>
+
+<!-- S2 -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">02</div><h2>The Competing Theories — A Multi-Voice Analysis</h2></div>
+
+  <p class="lead">This is not a settled debate. The world's sharpest observers disagree significantly on pace, depth, and shape. Understanding all sides is essential before committing strategy.</p>
+
+  <div class="theory-grid" style="margin-bottom:8px">
+    <div class="theory-card bull" style="grid-column:1/-1">
+      <div class="theory-tag" style="color:#1a7a40!important">📈 The Optimist's View — Criteo CEO, Bain</div>
+      <h4>"Additive, Not Replacing"</h4>
+      <p>Just as ecommerce didn't kill physical stores, agentic commerce will add a new high-converting discovery layer. The total addressable market grows. Retailers who adapt gain a new channel.</p>
+    </div>
+    <div class="theory-card bear">
+      <div class="theory-tag" style="color:var(--red)!important">⚠️ The Pessimist's View</div>
+      <h4>"It's a margin problem, not a marketing problem"</h4>
+      <p>The agent owns the customer relationship. Retailers become commodity fulfillment. Brand equity counts for nothing when a machine optimizes purely on price, speed, and reviews.</p>
+    </div>
+    <div class="theory-card neutral">
+      <div class="theory-tag">🎯 The Pragmatist — Benedict Evans</div>
+      <h4>"Which tasks get automated — that's the question"</h4>
+      <p>AI transitions happen slower than hype suggests and faster than incumbents plan for. The question isn't whether AI transforms commerce — it's which specific part of the journey it claims first.</p>
+    </div>
+  </div>
+
+  <h3>The Expansionist View</h3>
+  <div class="expert-voice">
+    <div class="voice-text">"The past 30 years of digital evolution have shown a consistent pattern: new channels expand the ecosystem and are additive, rarely replacing what came before. Agentic commerce will follow the same trajectory, adding a powerful new layer of engagement, but not a wholesale replacement for existing ones."</div>
+    <div class="voice-attr">Michael Komasinski, CEO, Criteo — <a href="https://www.criteo.com/blog/agentic-commerce-is-emerging-just-not-the-way-most-people-expect/" target="_blank" style="color:#667788!important"><em>"Agentic Commerce is Emerging, Just Not the Way Most People Expect"</em></a> · December 16, 2025</div>
+  </div>
+  <p>This school of thought — backed by Criteo, Bain, and historical channel-shift precedent — argues that agentic commerce adds a powerful new engagement layer without demolishing existing ones. Bain's November 2025 consumer research found that around half of consumers remain cautious about letting AI agents autonomously handle purchases from start to finish, particularly for higher-consideration categories. Today's LLM platforms are strongest in the research-and-comparison phase.</p>
+
+  <h3>The Structural Replacement View</h3>
+  <div class="expert-voice">
+    <div class="voice-text">"External LLM platforms will understand customer intent better than brands do. Brands will be invited into the decision process after intent is already formed. Visibility becomes conditional, paid, and reactive. This is not a marketing problem. It is a margin problem."</div>
+    <div class="voice-attr">Cenk Karacaev, Medium · January 2026</div>
+  </div>
+  <p>This camp argues prior channel shifts are insufficient analogies. Prior transitions — search to mobile to social — changed the <em>channel</em> but not the <em>buyer</em>. Agentic commerce changes the buyer from a human to a machine. BCG's December 2025 analysis warns that without intervention, retailers risk being "reduced to background utilities in agent-controlled marketplaces," noting that agents prioritize price, ratings, and delivery speed over brand familiarity or loyalty.</p>
+
+  <h3>The Pragmatic Middle — Benedict Evans</h3>
+  <div class="expert-voice">
+    <div class="voice-text">"AI has become the new Metaverse, in that people say it and you have no idea what they mean. The most important question isn't whether AI replaces things — it's which specific tasks it automates, and where in the value chain that happens."</div>
+    <div class="voice-attr"><a href="https://www.demandgenreport.com/industry-news/feature/b2bmx-2026-benedict-evans-explores-the-next-major-platform-shift-business-impacts-of-ai/52074/" target="_blank" style="color:#667788!important">Benedict Evans, B2BMX 2026 Keynote · February 2026</a></div>
+  </div>
+  <p>Evans, one of the most cited independent technology analysts, frames AI in the same historical arc as mainframes, PCs, and smartphones. The platform shift is structurally real, but its specific value capture points are still being discovered. His consistent position: transitions happen slower than hype suggests, faster than incumbents plan for, and never quite in the form predicted.</p>
+
+  <h3>The Retail Futurist View — Doug Stephens</h3>
+  <p>Doug Stephens (Retail Prophet), whose strategic frameworks have influenced Walmart, Google, LVMH, and BMW, argues the real question is not whether channels die but whether retailers can articulate a reason for existing that transcends transaction. In an agent-mediated world, the retailers who survive are those who provide something an agent cannot: genuine judgment, community, trust, and human context.</p>
+
+  <h3>The Economist's View — Democratization of Price Transparency</h3>
+  <div class="callout">
+    <div class="callout-label">The Economist, October 2025</div>
+    <p>"AI search tools can rapidly process data from company websites and publicly available sources. This democratisation of information will make it very difficult for businesses to charge anything above the fairest price. Customer loyalty could shift from brands to the AI tools themselves."</p>
+  </div>
+  <p>The structural implication: switching costs are falling. AI tools make price comparison so frictionless that years of brand investment can be neutralized in a single conversation. Scott Galloway's complementary analysis notes that Amazon is leveraging AI and robotics to achieve substantial reductions in fulfillment time and cost — meaning the companies that capture the most agentic commerce value are those with logistics certainty, not just content quality.</p>
+
+  <div class="theory-grid">
+    <div class="theory-card bull"><div class="theory-tag">Bull Case</div><h4>Additive, Not Replacing</h4><p>AI becomes a high-converting discovery channel. Sites persist for story and fulfillment. Retailers with rich, structured data get surfaced more — LLMs favor authority and specificity over mass-market breadth.</p></div>
+    <div class="theory-card bear"><div class="theory-tag">Bear Case</div><h4>Structural Disintermediation</h4><p>LLMs own the customer relationship. Retailers become fulfillment utilities. Brand equity is irrelevant to agents optimizing for price, speed, and ratings. Direct-to-brand channels eliminate multi-brand resellers.</p></div>
+    <div class="theory-card neutral"><div class="theory-tag">Most Likely</div><h4>Uneven, Vertical-by-Vertical</h4><p>The transition plays out differently by category. Low-consideration purchases go agentic first. High-consideration, fit-dependent categories hybridize. The question is which category you're in.</p></div>
+    <div class="theory-card neutral"><div class="theory-tag">The Unknown</div><h4>Agent Monetization &amp; Training Bias</h4><p>The monetization model for LLM platforms in commerce is unresolved. How agents are trained, what biases exist, and whether platforms move to advertising or transaction fees all have profound strategic implications.</p></div>
+  </div>
+</div>
+
+<!-- S3 -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">03</div><h2>The Purchase Consideration Spectrum</h2></div>
+
+  <p class="lead">Not all commerce is equal for agents. The single most important variable in predicting where agentic commerce displaces human shopping is purchase consideration — the cognitive and emotional weight a buyer attaches to a decision.</p>
+
+  <div class="illus-wrap">
+    <div class="illus-title">The Purchase Consideration Spectrum — Where Agents Win vs. Humans Stay in Control</div>
+    <div class="spec-wrap">
+      <div class="spec-bar"><div class="sz">1</div><div class="sz">2</div><div class="sz">3</div><div class="sz">4</div></div>
+      <div class="spec-labels">
+        <div class="sl">
+          <div class="sl-zone">Zone 1</div>
+          <div class="sl-name">Full Agent Control</div>
+          <div class="sl-eg">Coffee pods, cleaning supplies, pet food, printer ink</div>
+        </div>
+        <div class="sl">
+          <div class="sl-zone">Zone 2</div>
+          <div class="sl-name">Agent Researches, Human Decides</div>
+          <div class="sl-eg">Headphones, tools, accessories, general apparel</div>
+        </div>
+        <div class="sl hl">
+          <div class="sl-zone">Zone 3</div>
+          <div class="sl-name">Hybrid — Agent Assists</div>
+          <div class="sl-eg">Bikes, ski gear, running shoes, furniture, specialty equipment</div>
+        </div>
+        <div class="sl">
+          <div class="sl-zone">Zone 4</div>
+          <div class="sl-name">Human-Led Always</div>
+          <div class="sl-eg">Luxury, bespoke items, physical fittings, emotionally charged gifts</div>
+        </div>
+      </div>
+      <div class="spec-legend">
+        <span style="color:var(--red)!important;font-family:'DM Mono',monospace;font-size:10px">← AGENTS TAKE OVER FIRST</span>
+        <span style="color:var(--blue)!important;font-family:'DM Mono',monospace;font-size:10px">HUMANS STAY IN CONTROL →</span>
+      </div>
+    </div>
+    <div class="illus-caption">Specialty retailers with high-consideration categories — bikes, outdoor equipment, running gear — sit in Zone 3. Agents provide substantial research value, but the final decision involves personal judgment that agents will struggle to replace for years. This is a defensible position that requires rich product data to maintain.</div>
+  </div>
+
+  <p><a href="https://www.bain.com/insights/agentic-ai-commerce-the-next-retail-revolution-is-here/" target="_blank" style="color:var(--blue)!important">Bain's November 2025 research</a> found that around half of U.S. consumers remain cautious about letting AI handle an end-to-end transaction autonomously, and that adoption is expected to "vary by category and retailer, depending on the shopper's intent and where AI can be most supportive." The firm specifically identified "spec-driven asks" — commodity products where price, availability, and convenience are the primary decision factors — as the first to shift, with "more considered purchases, like apparel or travel," following as trust grows.</p>
+
+  <h3>Four Zones on the Spectrum</h3>
+  <ul class="num-list">
+    <li><div class="num-badge">1</div><div class="num-content"><span class="num-title">Full Delegation — Agents Win Immediately</span><span class="num-body">Replenishment purchases, commodity goods, standardized products. Coffee pods, cleaning supplies, bulk consumables. The agent knows your preferences, monitors inventory, and optimizes price. According to Morgan Stanley's November 2025 research, grocery and consumer packaged goods are the fastest-growing categories for agentic commerce — already driving 49% of AI-assisted purchases. This zone is moving fast.</span></div></li>
+    <li><div class="num-badge">2</div><div class="num-content"><span class="num-title">Research Delegation, Human Decision — Current Sweet Spot</span><span class="num-body">Electronics, apparel accessories, general sporting goods. The agent does research, comparison, and shortlisting. The human makes the final call. This is where most agentic activity is clustered right now — Bain found 30–45% of U.S. consumers already use generative AI for product research and comparison in this zone.</span></div></li>
+    <li><div class="num-badge">3</div><div class="num-content"><span class="num-title">Hybrid — Agent Assists, Human Commits</span><span class="num-body">Specialty equipment, running shoes, ski gear, furniture. High-consideration, fit-dependent, often emotionally significant. Agents provide extraordinary research value. But the final purchase involves personal judgment that will remain human-led for years. Specialty retailers operating in this zone have a defensible position — but only if their product data is rich enough for agents to surface the right options in the first place.</span></div></li>
+    <li><div class="num-badge">4</div><div class="num-content"><span class="num-title">Human-Led, Agent-Resistant — Long-Term Fortress</span><span class="num-body">Luxury goods, bespoke items, products requiring physical fitting. Agents may surface options, but the decision is owned by the human and often involves in-person evaluation. The store — physical or richly immersive digital — remains essential here and is not threatened in the near term.</span></div></li>
+  </ul>
+
+  <div class="hband"><p><strong>The strategic implication:</strong> The more you can shift your catalog and customer experience toward Zones 3 and 4 — where human judgment and domain expertise are irreplaceable — the more defensible your position in an agent-mediated world. Simultaneously, Zone 2 products must be machine-readable and agent-discoverable, or you lose them to competitors who are prepared.</p></div>
+</div>
+
+<!-- S4 -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">04</div><h2>Structured Data as the New Shelf Space</h2></div>
+
+  <p class="lead">If the LLM is the new storefront, structured product data is the new shelf. Brands that don't get their products onto the right shelf don't get sold. Brands whose products are poorly labeled get passed over entirely.</p>
+
+  <div class="illus-wrap">
+    <div class="illus-title">What an LLM Sees: Typical PDP Copy vs. Machine-Readable Product Data</div>
+    <div class="dc-grid">
+      <div class="dc-panel bad">
+        <div class="dc-head">❌ Typical Product Page Today — Invisible to Agents</div>
+        <div class="dc-field miss"><span class="dc-key">Name:</span><span>Apex Pro Road Bike — Our Best Yet!</span></div>
+        <div class="dc-field miss"><span class="dc-key">Desc:</span><span>Experience the ride of your life with our premium performance bicycle, crafted for serious riders who demand the best.</span></div>
+        <div class="dc-field miss"><span class="dc-key">Spec:</span><span>Lightweight frame, quality components</span></div>
+        <div class="dc-field miss"><span class="dc-key">Size:</span><span>Multiple sizes available</span></div>
+        <div class="dc-field miss"><span class="dc-key">Fit guidance:</span><span>(not listed)</span></div>
+        <div class="dc-field miss"><span class="dc-key">Compatibility:</span><span>(not listed)</span></div>
+        <div class="dc-score">🤖 Agent skips this product — can't verify any claims</div>
+      </div>
+      <div class="dc-panel good">
+        <div class="dc-head">✅ Machine-Readable Data — Agent Can Recommend</div>
+        <div class="dc-field pres"><span class="dc-key">Stack:</span><span>568mm (size 54)</span></div>
+        <div class="dc-field pres"><span class="dc-key">Reach:</span><span>383mm (size 54)</span></div>
+        <div class="dc-field pres"><span class="dc-key">Tire clearance:</span><span>Up to 38mm</span></div>
+        <div class="dc-field pres"><span class="dc-key">Groupset:</span><span>SRAM Rival AXS 12-spd</span></div>
+        <div class="dc-field pres"><span class="dc-key">Rider weight max:</span><span>250 lbs</span></div>
+        <div class="dc-field pres"><span class="dc-key">Ideal rider:</span><span>5'6"–5'10", endurance geometry, long-distance road</span></div>
+        <div class="dc-score">🤖 Agent confidently recommends &amp; explains this product</div>
+      </div>
+    </div>
+    <div class="illus-caption">LLMs are fact-extractors. Marketing adjectives are invisible to them. Specific, structured, verifiable facts — dimensions, compatibility ranges, use-case classifications, fit guidance — are the currency of agent-era discovery. The retailer with richer, more specific product data wins visibility over the one with better ad spend.</div>
+  </div>
+
+  <div class="illus-wrap">
+    <div class="illus-title">The Data Quality Flywheel — Why Early Movers Compound Their Advantage</div>
+    <div class="fw-wrap">
+      <div class="fw-step"><div class="fw-icon">📋</div><div class="fw-label">Rich Structured Data</div></div>
+      <div class="fw-arr">→</div>
+      <div class="fw-step"><div class="fw-icon">🤖</div><div class="fw-label">Accurate LLM Retrieval</div></div>
+      <div class="fw-arr">→</div>
+      <div class="fw-step"><div class="fw-icon">👆</div><div class="fw-label">More Recommendations</div></div>
+      <div class="fw-arr">→</div>
+      <div class="fw-step"><div class="fw-icon">💰</div><div class="fw-label">More Transactions</div></div>
+      <div class="fw-arr">→</div>
+      <div class="fw-step"><div class="fw-icon">⭐</div><div class="fw-label">More Reviews &amp; Signals</div></div>
+      <div class="fw-arr">↻</div>
+      <div class="fw-warn">The reverse is also true: data-poor catalogs become progressively less visible as agents learn which sources to trust.</div>
+    </div>
+    <div class="illus-caption">Companies that invest in data quality early lock in a compounding advantage. Each cycle makes the next stronger. Delay makes catching up exponentially harder — agents develop preferences for authoritative sources and those preferences persist.</div>
+  </div>
+
+  <p>In answer engine environments, there is no ranked list. There is one answer. LLMs need entities they can recognize — "Specialized Roubaix Sport" is a product, "SRAM" is a component brand — and facts they can verify. A paragraph full of marketing adjectives is useless to an AI. A paragraph with specific dimensions, weight limits, compatibility ranges, and performance specifications is gold.</p>
+
+  <h3>AEO — The New SEO</h3>
+  <p>Real-world transaction data is beginning to validate the strategic case. <a href="https://alhena.ai/blog/llm-traffic-ecommerce-conversion-data/" target="_blank" style="color:var(--blue)!important">Alhena AI, a commerce AI platform vendor, published a 329-brand dataset</a> showing LLM and generative AI traffic converting at 2.47% — ranking fourth among all acquisition channels, above Google Ads (1.82%) and Meta Ads (0.52%). While Alhena has a commercial interest in agentic commerce adoption, the directional finding is consistent with Adobe Analytics data and BCG's engagement research, which independently show AI-referred visitors converting better and engaging more deeply than other traffic sources. Yet most ecommerce teams have zero structured strategy for getting their products recommended by AI. That gap is the opportunity right now.</p>
+
+  <p>The terminology has evolved rapidly but refers to the same imperative: GEO (Generative Engine Optimization), AEO (Answer Engine Optimization), and ACO (Agentic Commerce Optimization) all mean: make your product data legible to machines that reason in language, not just index by keyword. Practically: implement JSON-LD Product schema across all product pages, write descriptions that include specific measurements and use-case language, and ensure compatibility information is explicit and consistent.</p>
+</div>
+
+<!-- S5 -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">05</div><h2>The Disintermediation Cascade</h2></div>
+
+  <p class="lead">The most existential risk for multi-brand retailers is not just that traffic declines. It's that the entire customer relationship migrates to a platform that extracts value from every transaction while returning progressively less of it to the retailer.</p>
+
+  <div class="illus-wrap">
+    <div class="illus-title">The Three-Phase Disintermediation Cascade — Where Most Retailers Are Now vs. Where This Is Heading</div>
+    <div class="casc">
+      <div class="ct-phase">
+        <div class="ct-left">
+          <div class="ct-period">Phase 1 · NOW</div>
+          <div class="ct-pname p1">Traffic &amp; Attention Migration</div>
+          <div class="ct-bar b1"></div>
+          <div class="ct-sev s1">Severity: Medium — accelerating rapidly</div>
+        </div>
+        <div>
+          <div class="ct-what">Shoppers start their journey on ChatGPT, Perplexity, or Gemini instead of Google. They may still end up on your site to buy — but you're no longer the discovery destination. Organic search traffic begins declining. BCG data shows nearly 10% of businesses have already seen a decline in organic traffic year-over-year attributable to AI search displacement. First-party behavioral data starts degrading as fewer shoppers browse your pages.</div>
+          <div class="ct-chips">
+            <span class="ct-chip c1">📉 Organic traffic declining</span>
+            <span class="ct-chip c1">👁 Less browse behavior captured</span>
+            <span class="ct-chip c2">⚠️ Discovery shifting off-site</span>
+          </div>
+        </div>
+      </div>
+      <div class="ct-phase">
+        <div class="ct-left">
+          <div class="ct-period">Phase 2 · 2026–2028</div>
+          <div class="ct-pname p2">Transaction Migration</div>
+          <div class="ct-bar b2"></div>
+          <div class="ct-sev s2">Severity: High</div>
+        </div>
+        <div>
+          <div class="ct-what">Checkout begins happening inside the LLM interface. OpenAI's partnership with PayPal (announced 2025) enables purchase within ChatGPT without visiting your site. Google's Universal Commerce Protocol (UCP), developed with Shopify, Walmart, Target, Mastercard, Visa, and 20+ global partners, creates a common language for seamless agent-to-checkout journeys. The retailer fulfills orders — but the customer experience belongs to the AI platform.</div>
+          <div class="ct-chips">
+            <span class="ct-chip c2">🛒 Checkout moving off-site</span>
+            <span class="ct-chip c2">💳 AI platform owns checkout data</span>
+            <span class="ct-chip c3">⛔ You become fulfillment infrastructure</span>
+          </div>
+        </div>
+      </div>
+      <div class="ct-phase">
+        <div class="ct-left">
+          <div class="ct-period">Phase 3 · 2028+</div>
+          <div class="ct-pname p3">Relationship Migration</div>
+          <div class="ct-bar b3"></div>
+          <div class="ct-sev s3">Severity: Existential</div>
+        </div>
+        <div>
+          <div class="ct-what">The customer relationship belongs entirely to the LLM platform. They have the purchase history, the preference signals, the behavioral data. Your loyalty program is irrelevant — the AI knows more about the customer than your CRM does. Re-engagement costs rise structurally and permanently. The retailer without a data moat or proprietary agent relationship is a commodity supplier. Bain warns that retailers who "fail to define an agentic commerce strategy risk ceding control over customer data, checkout and fulfillment to third-party AI platforms."</div>
+          <div class="ct-chips">
+            <span class="ct-chip c3">💔 Loyalty programs hollowed out</span>
+            <span class="ct-chip c3">🕳 CRM data stream goes dark</span>
+            <span class="ct-chip c3">📈 Re-acquisition costs rise permanently</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="illus-caption">Most retailers are entering Phase 1 right now. The window to build capabilities that prevent Phase 2 and 3 is the next 12–18 months. This is not a 5-year strategic issue. It is a present operational one.</div>
+  </div>
+
+  <div class="hband"><p><strong><a href="https://www.bain.com/insights/agentic-ai-commerce-the-next-retail-revolution-is-here/" target="_blank" style="color:#b8f060!important">Bain's Direct Warning (November 2025):</a></strong> "Multibrand retailers and marketplaces will likely face a greater disintermediation threat. Third-party AI agents increase market transparency, giving big, low-cost, high-speed players an edge. Retailers that cannot compete based on price, unique assortment, or shipping speed alone will need to develop a competitive differentiator that is attractive to agents."</p></div>
+
+  <h3>The Four Toll Bridge Owners</h3>
+  <p>Amazon, Google, Walmart, and the LLM platforms (OpenAI, Google, Anthropic, Perplexity) are each building from very different starting positions. The LLM platforms are building toll bridges — structures that want to own the discovery road and become the commercial destination. Bain's research (in partnership with Similarweb) found that AI now accounts for up to 25% of referral traffic for some retailers, though it represents less than 1% of total traffic overall — a signal that is small today but accelerating fast.</p>
+
+  <p>Amazon's strategic response — Nova Act, an AI agent for web browsing and autonomous shopping launched in early 2026 — represents its attempt to become the agent <em>and</em> the destination simultaneously. Most retailers have neither the scale nor the engineering resources to replicate this strategy. The question for independent retailers is not how to compete with Amazon's agent, but how to ensure their products are surfaced by every agent.</p>
+</div>
+
+<!-- S6 -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">06</div><h2>The Martech &amp; Customer Data Reckoning</h2></div>
+
+  <p class="lead">For the past decade, retail marketing ran on a proven formula: capture behavioral data, segment audiences, send personalized messages, and re-engage at scale. That entire paradigm is under structural pressure.</p>
+
+  <div class="illus-wrap">
+    <div class="illus-title">The Marketing Funnel: Classic vs. Agentic — Who Controls What</div>
+    <div class="fc-grid">
+      <div class="fc-box">
+        <div class="fc-head old">The Classic Funnel (2010–2023)</div>
+        <div class="fs fs1">🔍 Google Search &amp; SEO</div>
+        <div class="fs fs2">🌐 Your Website / Browse / PDP</div>
+        <div class="fs fs3">🛒 Cart &amp; Checkout</div>
+        <div class="fs fs4">📧 Email Retargeting</div>
+        <div class="fc-note on">You owned every step. You saw every click. You collected all the data.</div>
+      </div>
+      <div class="fc-box">
+        <div class="fc-head new">The Agentic Funnel (2024+)</div>
+        <div class="nfs nfs1"><span>🤖</span> LLM discovers &amp; recommends</div>
+        <div class="nfs nfs1"><span>💬</span> Agent compares &amp; shortlists</div>
+        <div class="nfs nfs2"><span>✅</span> Human approves</div>
+        <div class="nfs nfs3"><span>📦</span> You fulfill the order</div>
+        <div class="fc-note nn">You may only see the order. The agent owned everything above it.</div>
+      </div>
+    </div>
+    <div class="illus-caption">In the old funnel, you had data at every step — browse behavior, cart additions, abandoned sessions, and conversion signals. In the new funnel, the agent owns the top of the funnel entirely. The behavioral data that powered email retargeting, personalization, and re-engagement simply doesn't exist anymore.</div>
+  </div>
+
+  <p><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants" target="_blank" style="color:var(--blue)!important">McKinsey's October 2025 analysis</a> warns that brands face potential losses of 20–50% of their traditional search channel traffic as AI-powered search displaces conventional search engines — framed as a risk scenario requiring strategic response, not an inevitable central forecast. The behavioral shift is already measurable today. <a href="https://business.adobe.com/blog/generative-ai-powered-shopping-rises-with-traffic-to-retail-sites" target="_blank" style="color:var(--blue)!important">Adobe's data through July 2025</a> showed AI-driven visits to U.S. retail sites spending 32% more time on site, viewing 10% more pages, and bouncing 27% less often than traditional traffic — a quality signal that AI-referred shoppers are further down the consideration funnel when they arrive.</p>
+
+  <h3>The First-Party Data Imperative</h3>
+  <p>A profound irony sits at the center of the agentic commerce transition: as AI agents increasingly handle the discovery phase, the behavioral data that retailers can collect from site visitors degrades — precisely when first-party data has never been more commercially valuable. Retailers who have built deep first-party data assets — purchase history, preference signals, loyalty behavior, fit data — have a structural advantage that will appreciate as the behavioral signal from standard analytics erodes.</p>
+
+  <p>The retailers most at risk are those who built their personalization and retargeting strategies primarily on third-party cookies and browse-behavior triggers. As agents bypass the site entirely for discovery, those signals disappear. The retailers best positioned are those who have invested in loyalty programs, preference centers, and direct customer relationships that survive independent of whether the customer visits the website.</p>
+
+  <h3>The Emerging "Brand Twin" Concept</h3>
+  <p>One of the most forward-looking concepts emerging in martech is the "Brand Twin" — an always-on, brand-owned AI agent that deeply understands individual consumers and acts on their behalf. The strategic logic is defensive as much as offensive: if you don't have an agent representing your catalog and customer relationships, a third-party LLM will represent them on terms you don't control. A brand-owned agent preserves the customer relationship even as discovery moves off-site.</p>
+
+  <h3>Loyalty in an Agent World</h3>
+  <p>There is a genuine risk, flagged by The Economist in October 2025, that customer loyalty could shift from brands to the AI tools themselves — as AI tools make comparison so frictionless that brand familiarity becomes a progressively weaker moat. What builds genuine loyalty in an agent world differs from what built it before: proprietary data the agent can use on the customer's behalf, exclusive products or access the agent cannot source elsewhere, and service quality that exceeds what commodity alternatives can offer.</p>
+</div>
+
+<!-- S7 -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">07</div><h2>The Infrastructure Layer: MCP, UCP, A2A &amp; the Plumbing</h2></div>
+
+  <p class="lead">Beneath the strategic narrative, a technical infrastructure is rapidly consolidating. These protocols determine which retailers are agent-accessible and which are invisible. Understanding them is no longer optional for any ecommerce leader.</p>
+
+  <div class="illus-wrap">
+    <div class="illus-title">How AI Agents Connect to Retailers — The Technical Stack Explained Simply</div>
+    <div class="stack-d">
+      <div class="s-layer s-consumer">
+        <div class="s-icon">🙋</div>
+        <div>
+          <div class="s-name">The Consumer Layer — ChatGPT, Gemini, Claude, Perplexity</div>
+          <div class="s-desc">This is where the customer talks to their AI. They say "find me a road bike under $2,000 for a 5'8" rider who rides on weekends." The AI needs a standardized connection to real retailer catalog data to answer this — which is exactly what the protocol layer below provides.</div>
+        </div>
+      </div>
+      <div class="s-arr">↕</div>
+      <div class="s-layer s-protocol">
+        <div class="s-icon">🔌</div>
+        <div>
+          <div class="s-name">The Protocol Layer — MCP + UCP + A2A</div>
+          <div class="s-desc">Think of this as the universal plug adapter. MCP (Model Context Protocol, introduced by Anthropic) is the open standard that lets any AI connect to any retailer's catalog. UCP (Universal Commerce Protocol, built by Google with Shopify, Walmart, Target, Visa, Mastercard, and 20+ partners) enables the agent to complete a purchase with tokenized payments. A2A (Agent-to-Agent Protocol) lets agents negotiate directly with other agents — no human in the loop.</div>
+        </div>
+      </div>
+      <div class="s-arr">↕</div>
+      <div class="s-layer s-retailer">
+        <div class="s-icon">🏪</div>
+        <div>
+          <div class="s-name">The Retailer Layer — Your Catalog, Inventory &amp; Checkout</div>
+          <div class="s-desc">If you've implemented MCP endpoints and rich structured data, the agent can find your products, check availability, compare specs, and place an order. If you haven't — the agent routes to a competitor who has. Shopify deployed built-in MCP support across all stores in its Summer 2025 Edition; every Shopify store now has an MCP endpoint by default. Other platforms require custom implementation.</div>
+        </div>
+      </div>
+    </div>
+    <div class="s-footer">
+      <div><div class="sf-label">MCP</div><div class="sf-desc">Universal plug for AI ↔ data. Open standard introduced by Anthropic. Already built into all Shopify stores.</div></div>
+      <div><div class="sf-label">UCP</div><div class="sf-desc">Common checkout language. Backed by Google, Visa, Mastercard, Shopify, Walmart — 20+ global partners. Open source.</div></div>
+      <div><div class="sf-label">A2A</div><div class="sf-desc">Agent-to-agent negotiation. Price, availability, terms — all machine-to-machine. No human in the loop required.</div></div>
+    </div>
+    <div class="illus-caption">This infrastructure is being built right now and consolidating fast. Participating is the new equivalent of setting up Google Shopping feeds in 2012 — except the penalty for non-participation is more severe, because agents return one answer, not a ranked list. If your catalog has no address in this ecosystem, it doesn't exist to an agent.</div>
+  </div>
+
+  <h3>The Infrastructure Moment</h3>
+  <p>Shopify's Summer 2025 Edition rolled out built-in MCP support across all stores with no custom setup required. Through the MCP endpoint, an AI assistant can search the catalog, retrieve product details with real-time inventory, add items to cart, answer FAQs, and initiate checkout — all in a single conversation. For Shopify merchants, infrastructure participation is now a default capability. For retailers on other platforms, it requires deliberate engineering investment.</p>
+
+  <p><a href="https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/" target="_blank" style="color:var(--blue)!important">Google's Universal Commerce Protocol</a>, published in January 2026, is an open-source standard providing tokenized payments, verifiable credentials, and a common language for agent-to-checkout commerce journeys. Its endorsement by Adyen, American Express, Best Buy, Flipkart, Macy's, Mastercard, Stripe, The Home Depot, Visa, Zalando, and others signals that this is becoming baseline infrastructure, not an emerging experiment.</p>
+
+  <div class="callout">
+    <div class="callout-label">Strategic Implication</div>
+    <p>MCP + UCP + A2A together constitute the "plumbing" of agentic commerce. Retailers need to think of API infrastructure and data quality not as engineering concerns but as commercial real estate. If your catalog doesn't have an address in this ecosystem, your products don't exist to the agents that will increasingly mediate purchase decisions.</p>
+  </div>
+</div>
+
+<!-- S8 -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">08</div><h2>The Vendor Landscape — Who's Building What</h2></div>
+
+  <p class="lead">A generation of martech and commerce-technology vendors is being restructured around this shift. Some are pivoting successfully; others face commoditization. Understanding the landscape helps identify where to invest and where to build internally.</p>
+
+  <h3>Catalog Enrichment &amp; Product Intelligence</h3>
+  <p>A category of vendors is building specifically on the insight that structured product data is the foundation of both search performance and LLM discoverability. These companies offer AI-powered attribute enrichment, product tagging, and data normalization — effectively translating human-written catalog descriptions into machine-readable structured data at scale. The market opportunity is significant because most retailer catalogs remain in poor shape: missing attributes, inconsistent naming conventions, empty specification fields, and marketing copy written for humans rather than machines.</p>
+
+  <p>The build-versus-buy question is genuine. For large catalogs (100,000+ SKUs across multiple categories), vendor solutions provide speed and scale that would be difficult to match internally. For specialty retailers with bounded catalog depth and deep domain expertise, LLM-assisted internal enrichment workflows are increasingly viable — and produce data that carries proprietary domain knowledge that no external vendor can replicate.</p>
+
+  <h3>Behavioral Trigger &amp; Lifecycle Marketing Platforms</h3>
+  <p>The generation of platforms built on behavioral email and SMS personalization — triggered by browse behavior, cart abandonment, and purchase history — face a structural challenge as agentic commerce reduces the on-site data collection surface. When agents browse on behalf of shoppers, the behavioral signals that powered trigger-based marketing disappear. The platforms adapting most effectively are pivoting toward first-party data activation, predictive modeling on existing purchase history, and integration with LLM-native surfaces rather than relying solely on on-site behavioral signals.</p>
+
+  <h3>Search, Discovery &amp; AEO Intelligence</h3>
+  <p>Platforms focused on internal site search and product discovery are being directly threatened as agentic interfaces increasingly handle the discovery layer before a shopper ever reaches the retailer's site. The adaptive pivot is toward AEO tooling — helping retailers understand how their products appear (or don't appear) in LLM recommendations, and building workflows to improve that visibility. Enterprise AEO tools now offer multi-LLM simulation capabilities, testing identical queries across GPT-4o, Claude, and Gemini to reveal how different AI systems retrieve and weight your data — a new form of search rank tracking built for the agent era.</p>
+
+  <h3>The Build-vs-Buy Analysis for 2026</h3>
+  <table class="data-table">
+    <thead><tr><th>Capability</th><th>Buy Signal</th><th>Build Signal</th><th>Urgency</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Catalog enrichment / attribute fill</strong></td><td>Large catalog (100K+ SKUs), multi-category</td><td>Deep vertical expertise, bounded catalog depth</td><td><span class="badge badge-red">High</span></td></tr>
+      <tr><td><strong>AEO / LLM visibility monitoring</strong></td><td>No internal AI expertise; need benchmarks fast</td><td>Strong AI team; ability to build custom tracking</td><td><span class="badge badge-red">High</span></td></tr>
+      <tr><td><strong>MCP / UCP endpoint setup</strong></td><td>Shopify (already native); other platforms emerging</td><td>Custom ecommerce platform requiring custom build</td><td><span class="badge badge-red">High</span></td></tr>
+      <tr><td><strong>On-site AI shopping assistant</strong></td><td>No technical resources; need rapid deployment</td><td>Deep domain knowledge to encode as expertise</td><td><span class="badge badge-amber">Medium</span></td></tr>
+      <tr><td><strong>First-party data / CDP infrastructure</strong></td><td>Marketing ops team needs unified customer view</td><td>Rarely — integration complexity is high</td><td><span class="badge badge-amber">Medium</span></td></tr>
+      <tr><td><strong>Behavioral trigger / lifecycle marketing</strong></td><td>Need proven playbooks; rapid deployment</td><td>Unique data signals; tight platform integration</td><td><span class="badge badge-green">Evolving</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- S9 — MULTI-BRAND RETAILERS -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">09</div><h2>What Multi-Brand Retailers Must Do</h2></div>
+
+  <p class="lead">Multi-brand retailers — those who resell hundreds or thousands of third-party brands without owning any proprietary product — face the most acute version of the agentic commerce challenge. Understanding this specific threat is essential to building the right response.</p>
+
+  <p>Bain's analysis is explicit: "Multi-brand retailers and marketplaces will likely face a greater disintermediation threat. Third-party AI agents increase market transparency, giving big, low-cost, high-speed players an edge." The structural vulnerability is threefold — and stacked.</p>
+
+  <h3>The Three Stacked Threats</h3>
+
+  <div class="callout">
+    <div class="callout-label">Threat 1: Brand Bypass via Direct Agent Routing</div>
+    <p>When a consumer asks an agent to find the best deal on a specific branded product, the agent has no obligation to route through a multi-brand retailer. If the brand itself builds an MCP server and agentic checkout flow — an increasingly common development — an agent optimizing for price, trust, and simplicity may route directly to the brand. Multi-brand retailers must compete by offering genuine value the brand's own DTC site cannot: better price (within MAP constraints), broader compatibility context, faster shipping, or superior service reliability that agents can read and verify.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Threat 2: Catalog Data Disadvantage vs. Brands</div>
+    <p>Brands own their product data at the source. They know the exact specifications, compatibility matrices, intended use classifications, and fit guidance — information that multi-brand retailers typically receive through vendor-supplied feeds of variable quality and completeness. If agents prefer more authoritative, data-rich sources (and they demonstrably do), the retailer working from incomplete vendor feeds is structurally disadvantaged against the brand publishing primary-source data. The response: invest in first-party data enrichment that adds compatibility context, use-case guidance, and comparative intelligence that the brand itself doesn't publish.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Threat 3: Price Transparency Commoditizes Positioning</div>
+    <p>Agents make price comparison essentially frictionless and instantaneous. Any pricing advantage earned through customer loyalty, browsing habits, or low discoverability of competitors is eliminated when an agent compares every available option in seconds. If price is the primary differentiation, that advantage is structurally fragile. The response must be richer value that agents can read and cite: proprietary expertise, exclusive products, verified service quality metrics, and domain knowledge that the commodity alternative cannot provide.</p>
+  </div>
+
+  <h3>The Three Strategic Opportunities</h3>
+
+  <ul class="num-list">
+    <li>
+      <div class="num-badge">1</div>
+      <div class="num-content">
+        <span class="num-title">Become the Vertical Authority Hub</span>
+        <span class="num-body">No general retailer, no LLM trained on broad web data, and no individual brand can be the most authoritative structured knowledge source in a specialized vertical across all categories. A specialty retailer can. The specific knowledge — compatibility matrices, fit guides, terrain-specific recommendations, upgrade path logic, service interval data — structured as machine-readable domain expertise, becomes the kind of content LLMs cite, reference, and prefer. This is not a marketing investment. It is a data moat. The principle, documented by multiple AEO research firms, is "niche density": becoming the most authoritative source in a specific vertical outranks mass-market breadth in agent retrieval.</span>
+      </div>
+    </li>
+    <li>
+      <div class="num-badge">2</div>
+      <div class="num-content">
+        <span class="num-title">Encode Expert Judgment as Agent-Usable Data</span>
+        <span class="num-body">Specialty retailers possess domain expertise that general retailers and individual brands cannot replicate — staff who use the products, who understand the nuance of product selection for different users and conditions, who have accumulated years of customer fit and purchase data. In an agent-mediated world, that expertise needs to be externalized as structured data: fit recommendations mapped to user dimensions, compatibility scores, use-case-specific build recommendations, and upgrade path patterns derived from real purchase behavior. This is the kind of proprietary signal that a general LLM cannot train on unless the retailer publishes it — and publishing it creates a durable advantage.</span>
+      </div>
+    </li>
+    <li>
+      <div class="num-badge">3</div>
+      <div class="num-content">
+        <span class="num-title">Own the On-Site Agent Experience Before Off-Site Agents Do</span>
+        <span class="num-body">According to <a href="https://constructor.com/preparing-retail-for-agentic-ai" target="_blank" style="color:#333!important">Constructor.com's "Preparing Retail for Agentic AI" report</a>, 43% of shoppers want an AI-powered search bar or chatbot to explain what they need in their own words. When asked directly about a true "AI agent" on a retail site, 60% leaned positive — 23% said they would definitely try it and 37% said they probably would. Only 13% said they'd likely refuse. The customer appetite for expert AI assistance is real — and the window to own that experience on the retailer's terms is open right now. An on-site agent that knows the full catalog deeply and can guide a customer through complex selection decisions is stronger differentiation than any banner campaign — and serves as a continuous data collection mechanism for understanding catalog gaps and customer needs.</span>
+      </div>
+    </li>
+  </ul>
+
+  <h3>The Roadmap — Three Time Horizons</h3>
+
+  <div style="border-top:1px solid var(--rule);padding:20px 0">
+    <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;margin-bottom:20px">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)!important;padding-top:3px">Now–12 Mo</div>
+      <div>
+        <div style="font-size:14px;font-weight:700;color:var(--ink)!important;margin-bottom:6px">Become Machine-Readable</div>
+        <p style="font-size:13.5px">Audit catalog data quality. Identify highest-traffic, highest-margin SKUs and ensure complete attribute coverage. Implement JSON-LD Product schema across all product pages. Establish baseline AEO visibility tracking — understand where your products appear (and don't) in LLM recommendations for your most important queries. Stand up MCP endpoints or assess your platform's native support. Begin parallel search enrichment as a data quality initiative with direct on-site commercial payback.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;margin-bottom:20px;border-top:1px solid var(--rule);padding-top:20px">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)!important;padding-top:3px">1–3 Years</div>
+      <div>
+        <div style="font-size:14px;font-weight:700;color:var(--ink)!important;margin-bottom:6px">Build the Vertical Intelligence Layer</div>
+        <p style="font-size:13.5px">Develop and publish a domain knowledge base that makes your store the authority LLMs cite in your vertical. Structured fit guides, compatibility matrices, upgrade path logic, comparative tools, and use-case-specific guidance — structured as machine-readable content. Every piece of domain knowledge published increases your intellectual property surface area in the LLM training and retrieval ecosystem. Deploy an on-site AI shopping assistant powered by this knowledge base.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;border-top:1px solid var(--rule);padding-top:20px">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)!important;padding-top:3px">3–5 Years</div>
+      <div>
+        <div style="font-size:14px;font-weight:700;color:var(--ink)!important;margin-bottom:6px">Position as the Vertical Agent or the Agent's Preferred Source</div>
+        <p style="font-size:13.5px">The end state is a choice: become the vertical-specific agent that general-purpose LLMs route to when a query requires deep domain knowledge, or become the retailer whose data and fulfillment infrastructure the agent consistently selects because of trust, authority, and service reliability. Either path requires the knowledge moat built in the prior phase.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S10 -->
+<div class="section">
+  <div class="sec-header"><div class="sec-num">10</div><h2>Strategic Synthesis — What We Know, What We Don't, and What to Do</h2></div>
+
+  <p class="lead">After pulling in every verified perspective — LLM infrastructure architects, economists, retail futurists, and the evidence accumulating in live commerce data — here is the honest synthesis.</p>
+
+  <div class="illus-wrap">
+    <div class="illus-title">Action Priority Scorecard — What Needs to Happen and How Urgently</div>
+    <div class="sc-wrap">
+      <div class="sc-head-row"><span>Action</span><span>Urgency Level</span><span>Priority</span></div>
+      <div class="sc-row"><div class="sc-item">Catalog Data Audit</div><div class="sc-bw"><div class="sc-b urgent" style="width:95%"></div></div><div class="sc-pct urgent">Do Now</div></div>
+      <div class="sc-row"><div class="sc-item">AEO / LLM Visibility</div><div class="sc-bw"><div class="sc-b urgent" style="width:90%"></div></div><div class="sc-pct urgent">Do Now</div></div>
+      <div class="sc-row"><div class="sc-item">MCP Endpoint Setup</div><div class="sc-bw"><div class="sc-b urgent" style="width:88%"></div></div><div class="sc-pct urgent">Do Now</div></div>
+      <div class="sc-row"><div class="sc-item">Schema Markup on PDPs</div><div class="sc-bw"><div class="sc-b high" style="width:75%"></div></div><div class="sc-pct high">This Quarter</div></div>
+      <div class="sc-row"><div class="sc-item">On-Site AI Assistant</div><div class="sc-bw"><div class="sc-b high" style="width:65%"></div></div><div class="sc-pct high">This Year</div></div>
+      <div class="sc-row"><div class="sc-item">Vertical Knowledge Base</div><div class="sc-bw"><div class="sc-b medium" style="width:50%"></div></div><div class="sc-pct medium">1–2 Years</div></div>
+      <div class="sc-row"><div class="sc-item">First-Party Data CDP</div><div class="sc-bw"><div class="sc-b medium" style="width:45%"></div></div><div class="sc-pct medium">1–2 Years</div></div>
+    </div>
+    <div class="illus-caption">The first three items are table-stakes infrastructure for participating in agentic commerce at all. The rest compounds over time and builds the defensible position that makes any retailer irreplaceable in an agent-mediated market.</div>
+  </div>
+
+  <h3>What We Know With High Confidence</h3>
+  <ul class="num-list">
+    <li><div class="num-badge">1</div><div class="num-content"><span class="num-title">Discovery is already shifting, and it is accelerating</span><span class="num-body">The data from Adobe, Morgan Stanley, Bain, and BCG is consistent: AI-driven traffic is growing at triple-digit or higher year-over-year rates, converting better than paid channels, and led by younger demographics who will dominate consumer spending within a decade. This is not a future trend to plan for — it is a present trend to respond to now.</span></div></li>
+    <li><div class="num-badge">2</div><div class="num-content"><span class="num-title">Structured product data is now a commercial asset, not a technical detail</span><span class="num-body">Any retailer whose product data is not rich, consistent, and machine-readable is already losing LLM visibility to competitors who are. This is the most immediate, highest-leverage investment available. The cost of fixing it is high. The cost of not fixing it is compounding interest on a competitive debt.</span></div></li>
+    <li><div class="num-badge">3</div><div class="num-content"><span class="num-title">The infrastructure layer is consolidating fast</span><span class="num-body">MCP is already deployed at scale on Shopify. UCP is backed by Google, Shopify, Visa, Mastercard, and 20+ global partners. These are not emerging standards debating their future — they are becoming the baseline. Retailers not integrated into this ecosystem within 18 months will face compounding disadvantage that grows harder to overcome over time.</span></div></li>
+    <li><div class="num-badge">4</div><div class="num-content"><span class="num-title">First-party data becomes more valuable as behavioral signal degrades</span><span class="num-body">The more commerce moves through agent interfaces, the less behavioral data retailers capture from site sessions. Retailers who have built deep first-party data assets — purchase history, preference signals, domain-specific user data — have a structural advantage that will appreciate as the standard analytics data stream thins.</span></div></li>
+  </ul>
+
+  <h3>What We Don't Know — The Honest Uncertainties</h3>
+  <p>The pace of full transaction delegation remains genuinely uncertain for high-consideration categories. Bain's November 2025 research found around half of consumers still cautious about autonomous agent purchasing, particularly for higher-consideration items. That number will change as trust develops — but how fast, and for which categories, is not yet clear.</p>
+
+  <p>The monetization model for LLM platforms in commerce is unresolved. If platforms monetize through advertising (brands pay for placement), the dynamics resemble Google Shopping. If through transaction fees, they resemble Amazon Marketplace. If they maintain neutral citation, data quality wins. These different structures have profoundly different strategic implications for retailers, and we are still in the early, pre-monetization phase of most platforms' commerce ambitions.</p>
+
+  <p>Finally: the training biases embedded in LLMs are not transparent. An agent trained primarily on Amazon product data will have different product knowledge defaults than one trained on a broader web corpus. These biases may systematically advantage some retailers and brands over others in ways that have nothing to do with product quality or data structure — and are not yet well understood.</p>
+
+  <h3>The Single Most Important Conclusion</h3>
+  <div class="callout">
+    <div class="callout-label">Core Strategic Principle</div>
+    <p>The retailers that survive agentic commerce won't be the ones with the most SKUs, the most ad spend, or even the best prices. They will be the ones whose expertise, knowledge, and product intelligence the agent trusts — because they have encoded that intelligence as structured data, published it as authoritative content, and built the technical infrastructure for agents to access it reliably. In specialty retail, expertise has always been the moat. In agentic commerce, that expertise needs to live in a format machines can reason over. The window to build it before competitors do is closing faster than most retailers realize.</p>
+  </div>
+
+  <p>History suggests that resisting new intermediaries rarely works. Retailers who refused to list on Amazon lost reach. Those who dismissed mobile as a distraction fell behind. Agents aren't adversaries — they're channels. The sooner retailers treat them as distribution infrastructure, the sooner they can shape how their products are represented.</p>
+
+  <p>The website is not dead. The product page is not going away. But its role is fundamentally changing: from being the destination of the shopping journey, it is becoming the data source that feeds an ecosystem of agents, assistants, and interfaces that will surface products to buyers who may never visit it at all. Design your data strategy accordingly.</p>
+</div>
+
+</div><!-- /report-body -->
+
+<!-- SOURCES -->
+<div class="sources-section">
+  <div style="max-width:820px;margin:0 auto">
+    <div class="sources-title">Sources &amp; References</div>
+    <div class="sources-sub">All statistics in this report are verified against primary sources. Links are to original publications where available.</div>
+
+    <div class="source-group">
+      <div class="source-group-label">Market Size &amp; Projections</div>
+      <div class="source-item"><div class="source-num">1</div><div class="source-text">Morgan Stanley Research. <em>"Agentic Commerce Impact Could Reach $385 Billion by 2030."</em> November 2025. <a href="https://www.morganstanley.com/insights/articles/agentic-commerce-market-impact-outlook" target="_blank">morganstanley.com</a> — Projects $190B (base) to $385B (bull case) in U.S. ecommerce by 2030, representing 10–20% of online retail market share.</div></div>
+      <div class="source-item"><div class="source-num">2</div><div class="source-text">Bain &amp; Company. <em>"Agentic AI in Retail: How Autonomous Shopping Is Redefining the Customer Journey."</em> November 2025. <a href="https://www.bain.com/insights/agentic-ai-commerce-the-next-retail-revolution-is-here/" target="_blank">bain.com</a> — Projects $300B–$500B U.S. agentic commerce by 2030, representing 15–25% of total ecommerce.</div></div>
+      <div class="source-item"><div class="source-num">3</div><div class="source-text">McKinsey &amp; Company (Schumacher, Roberts, Giebel). <em>"The Agentic Commerce Opportunity: How AI Agents Are Ushering in a New Era for Consumers and Merchants."</em> October 2025. <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants" target="_blank">mckinsey.com</a> — Projects $1T U.S. B2C and $3–5T global agentic commerce by 2030.</div></div>
+    </div>
+
+    <div class="source-group">
+      <div class="source-group-label">Consumer Behavior &amp; Adoption Data</div>
+      <div class="source-item"><div class="source-num">4</div><div class="source-text">Adobe Analytics. <em>"Adobe: Holiday Shopping Season Drove a Record $257.8 Billion Online."</em> January 7, 2026. <a href="https://news.adobe.com/news/2026/01/adobe-holiday-shopping-season" target="_blank">news.adobe.com</a> — 693.4% year-over-year increase in AI-driven traffic to U.S. retail sites during the 2025 holiday season (Nov–Dec). AI referrals converted 31% better than non-AI traffic.</div></div>
+      <div class="source-item"><div class="source-num">5</div><div class="source-text">Commerce &amp; Future Commerce (in partnership with Centiment). <em>"New Modes: How AI Is Shaping New Commerce Contexts and Expectations."</em> September 15, 2025. <a href="https://investors.bigcommerce.com/news-releases/news-release-details/1-3-gen-z-and-1-4-millennials-now-turn-ai-platforms-over-other/" target="_blank">bigcommerce investor relations</a> — Survey of 1,000 consumers (U.S., U.K., Australia/NZ): 33% of Gen Z and 26% of Millennials prefer AI platforms for product research. 41% of all respondents use LLM tools daily.</div></div>
+      <div class="source-item"><div class="source-num">6</div><div class="source-text">Bain &amp; Company (Consumer Lab Generative AI Survey). Cited in "Agentic AI in Retail," November 2025. 30–45% of U.S. consumers use Generative AI for product research and comparison. Around half remain cautious about fully autonomous agent purchasing.</div></div>
+      <div class="source-item"><div class="source-num">7</div><div class="source-text">Morgan Stanley AlphaWise Survey. Cited in "Agentic Commerce Impact," November 2025. Approximately 23% of Americans made a purchase via AI in the past month. LLM platform adoption approaching 50% in the U.S.</div></div>
+    </div>
+
+    <div class="source-group">
+      <div class="source-group-label">Retail Strategy &amp; Disintermediation</div>
+      <div class="source-item"><div class="source-num">8</div><div class="source-text">Boston Consulting Group (BCG). <em>"Agentic Commerce is Redefining Retail — How to Respond."</em> December 2025. <a href="https://www.bcg.com/publications/2025/agentic-commerce-redefining-retail-how-to-respond" target="_blank">bcg.com</a> — Agents prioritize price, ratings, delivery speed over brand familiarity. Nearly 10% of businesses have seen organic traffic declines attributable to AI search displacement.</div></div>
+      <div class="source-item"><div class="source-num">9</div><div class="source-text">Bain &amp; Company. <em>"2030 Forecast: How Agentic AI Will Reshape U.S. Retail."</em> December 2025. <a href="https://www.bain.com/insights/2030-forecast-how-agentic-ai-will-reshape-us-retail-snap-chart/" target="_blank">bain.com</a> — "Multibrand retailers and marketplaces will likely face a greater disintermediation threat." AI now accounts for up to 25% of referral traffic for some retailers (Bain/Similarweb data), though less than 1% of total traffic.</div></div>
+      <div class="source-item"><div class="source-num">10</div><div class="source-text">Komasinski, Michael (CEO, Criteo). <em>"Agentic Commerce is Emerging, Just Not the Way Most People Expect."</em> Criteo Blog, December 16, 2025. <a href="https://www.criteo.com/blog/agentic-commerce-is-emerging-just-not-the-way-most-people-expect/" target="_blank">criteo.com</a> — Direct quote confirmed verbatim from source. Note: Criteo is a commerce media platform with a commercial interest in agentic commerce adoption. The expansionist view expressed is consistent with Bain's consumer research and historical channel-shift precedent.</div></div>
+    </div>
+
+    <div class="source-group">
+      <div class="source-group-label">Technical Infrastructure</div>
+      <div class="source-item"><div class="source-num">11</div><div class="source-text">Google Developers Blog (Handa, Gupta). <em>"Under the Hood: Universal Commerce Protocol (UCP)."</em> January 11, 2026. <a href="https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/" target="_blank">developers.googleblog.com</a> — Open-source UCP standard, endorsed by Shopify, Etsy, Wayfair, Target, Walmart, Adyen, American Express, Mastercard, Stripe, Visa, The Home Depot, Zalando, and others.</div></div>
+      <div class="source-item"><div class="source-num">12</div><div class="source-text">Anthropic. <em>Model Context Protocol (MCP) Specification.</em> 2025. <a href="https://modelcontextprotocol.io/specification/2025-11-25" target="_blank">modelcontextprotocol.io</a> — Open standard for connecting LLM applications to external data sources and tools.</div></div>
+      <div class="source-item"><div class="source-num">13</div><div class="source-text">Shopify. <em>"MCP Support in Shopify Summer '25 Edition."</em> 2025. Built-in MCP endpoint deployed across all Shopify stores by default, enabling AI assistant access to catalog, inventory, cart, and checkout.</div></div>
+    </div>
+
+    <div class="source-group">
+      <div class="source-group-label">AEO, Data Quality &amp; Conversion</div>
+      <div class="source-item"><div class="source-num">14</div><div class="source-text">Alhena AI. <em>"Agentic Commerce Report: 329 Brands."</em> 2025/2026. <a href="https://alhena.ai/blog/llm-traffic-ecommerce-conversion-data/" target="_blank">alhena.ai</a> — LLM/generative AI traffic converts at 2.47%, ranking fourth among all acquisition channels — above Google Ads (1.82%) and Meta Ads (0.52%). <strong>Editorial note:</strong> Alhena AI is a commerce AI vendor with a direct commercial interest in the adoption of agentic commerce. This dataset is self-reported from their own platform. The directional finding is consistent with independent Adobe and BCG data, but figures should be treated as indicative rather than neutral research.</div></div>
+      <div class="source-item"><div class="source-num">15</div><div class="source-text">Constructor.com. <em>"Preparing Retail for Agentic AI."</em> 2025. <a href="https://constructor.com/preparing-retail-for-agentic-ai" target="_blank">constructor.com</a> — 43% of shoppers want AI-powered search bar or chatbot for natural language shopping assistance. 60% expressed positive intent toward on-site AI agents (23% "definitely would try" + 37% "probably would"); only 13% said they'd likely refuse.</div></div>
+      <div class="source-item"><div class="source-num">16</div><div class="source-text">Adobe Analytics. <em>"Generative AI-Powered Shopping Rises with Traffic to U.S. Retail Sites."</em> 2025. <a href="https://business.adobe.com/blog/generative-ai-powered-shopping-rises-with-traffic-to-retail-sites" target="_blank">business.adobe.com</a> — AI-referred visitors spend 32% more time on site, view 10% more pages, bounce 27% less. Revenue per visit from AI traffic increased 84% from January to July 2025.</div></div>
+    </div>
+
+    <div class="source-group">
+      <div class="source-group-label">Expert Commentary &amp; Frameworks</div>
+      <div class="source-item"><div class="source-num">17</div><div class="source-text">Evans, Benedict. <em>B2BMX 2026 Keynote.</em> February 2026. <a href="https://www.demandgenreport.com/industry-news/feature/b2bmx-2026-benedict-evans-explores-the-next-major-platform-shift-business-impacts-of-ai/52074/" target="_blank">demandgenreport.com</a> — AI transition in historical context of prior platform shifts; value capture points still being discovered.</div></div>
+      <div class="source-item"><div class="source-num">18</div><div class="source-text">Stephens, Doug (Retail Prophet). Multiple publications 2024–2025. Competitive advantage in the agent era requires contribution of genuine value beyond transaction — judgment, community, trust, human context.</div></div>
+      <div class="source-item"><div class="source-num">19</div><div class="source-text">The Economist. <em>"The End of the Rip-Off Economy."</em> October 2025. Democratization of price information through AI; structural downward pressure on pricing power and switching costs.</div></div>
+      <div class="source-item"><div class="source-num">20</div><div class="source-text">Karacaev, Cenk. <em>"Preparing for the LLM-Driven Unified E-Commerce Era."</em> Medium, January 2026. Structural replacement view: "This is not a marketing problem. It is a margin problem."</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-top">
+    <span>Strategic Intelligence Report</span>
+    <span style="color:#334455!important">·</span>
+    <span class="green">Agentic Commerce Series — Generic Edition</span>
+    <span style="color:#334455!important">·</span>
+    <span>April 2026</span>
+  </div>
+  <div class="footer-label">Primary Sources</div>
+  <div class="footer-sources">
+    <a href="https://www.morganstanley.com/insights/articles/agentic-commerce-market-impact-outlook" target="_blank" class="footer-pill" style="text-decoration:none">Morgan Stanley</a>
+    <a href="https://www.bain.com/insights/agentic-ai-commerce-the-next-retail-revolution-is-here/" target="_blank" class="footer-pill" style="text-decoration:none">Bain &amp; Company</a>
+    <a href="https://www.bcg.com/publications/2025/agentic-commerce-redefining-retail-how-to-respond" target="_blank" class="footer-pill" style="text-decoration:none">BCG</a>
+    <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants" target="_blank" class="footer-pill" style="text-decoration:none">McKinsey &amp; Company</a>
+    <a href="https://news.adobe.com/news/2026/01/adobe-holiday-shopping-season" target="_blank" class="footer-pill" style="text-decoration:none">Adobe Analytics</a>
+    <a href="https://investors.bigcommerce.com/news-releases/news-release-details/1-3-gen-z-and-1-4-millennials-now-turn-ai-platforms-over-other/" target="_blank" class="footer-pill" style="text-decoration:none">Commerce / Future Commerce</a>
+    <a href="https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/" target="_blank" class="footer-pill" style="text-decoration:none">Google Developers Blog</a>
+    <a href="https://www.criteo.com/blog/agentic-commerce-is-emerging-just-not-the-way-most-people-expect/" target="_blank" class="footer-pill" style="text-decoration:none">Criteo</a>
+  </div>
+</div>
+
+</body>
+</html>
